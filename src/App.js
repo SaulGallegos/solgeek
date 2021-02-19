@@ -50,6 +50,7 @@ function App() {
     <div className="App">
       <FormAdd
         edit={edit}
+        setEdit={setEdit}
       />
       <List
         users={users}

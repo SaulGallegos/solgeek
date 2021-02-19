@@ -2,7 +2,7 @@ import '../App.css';
 import useForm from '../useForm';
 import validate from '../Validator';
 
-const FormAdd = ({edit}) => {
+const FormAdd = ({edit, setEdit}) => {
 
      const {handleChange, values, handleSubmit, errors} = useForm(validate);
 
@@ -102,6 +102,7 @@ const FormAdd = ({edit}) => {
                     <button
                          className="form-input-btn"
                          type="submit"
+                         onClick={() => setEdit(false)}
                     >
                          Guardar usuario
                     </button>
