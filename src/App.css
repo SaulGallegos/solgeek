@@ -1,38 +1,145 @@
-.App {
-  text-align: center;
+.App{
+     width: 100vw;
+     height: 100vh;
+     display: grid;
+     color: #fff;
+     grid-template-columns: repeat(3, 1fr);
+     grid-template-areas: 
+     "form list list";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media(max-width:768px){
+     .App{
+          grid-template-columns: repeat(1, 1fr);
+          grid-template-areas: 
+          "form"
+          "list";
+     }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ul{
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     background-color: #2f4050;
+     padding: 1.5rem;
+     border-radius: 15px;
+     font-size: 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+li{
+     list-style: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a{
+     color: #fff;
+     font-size: 1.5rem;
 }
+
+@media(max-width:768px){
+     ul{
+          padding: 1rem;
+          font-size: 1rem;
+     }
+}
+
+body{
+     font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3{
+     color: #fff;
+     padding: 1rem;
+}
+
+.form-content{
+     height: 100%;
+     background-color: #2f4050;
+     padding: 2rem;
+     grid-area: form;
+}
+
+.list{
+     height: 100%;
+     padding: 2rem;
+     grid-area: list;
+     background-color: #1d2f41;
+     font-size: 1.5rem;
+     font-weight: bold;
+}
+
+.form-inputs {
+     margin-bottom: 0.5rem;
+     width: 90%;
+}
+   
+.form-inputs p {
+     font-size: 1rem;
+     padding: .5rem;
+     color: #fff;
+     font-weight: bold;
+     background-color: #ff4d4dbb;
+}
+   
+.form-label {
+     display: inline-block;
+     font-size: 1rem;
+     font-weight: bold;
+     margin-bottom: 6px;
+     color: #fff;
+}
+
+select{
+     color: #696969;
+     font-size: 12px;
+}
+   
+.form-input {
+     display: block;
+     padding-left: 10px;
+     outline: none;
+     border-radius: 2px;
+     height: 40px;
+     width: 100%;
+     border: none;
+}
+   
+.form-input::placeholder {
+     color: #414141;
+     font-size: 12px;
+     padding: 5px;
+     margin-top: 5px;
+}
+
+.form-input-btn {
+     width: 90%;
+     height: 56px;
+     margin-top: 10px;
+     border-radius: 2px;
+     background: #1d2f41;
+     outline: none;
+     border: none;
+     color: #fff;
+     font-size: 1.4rem;
+     font-weight: bold;
+     transition: all .3s ease;
+}
+
+.form-input-btn:hover{
+     cursor: pointer;
+     background: #21364b;
+}
+   
+   
+   
+
+
+
+
