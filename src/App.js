@@ -7,54 +7,62 @@ import {useState} from 'react';
 function App() {
 
   const [edit, setEdit] = useState(false);
+  const [editUser, setEditUser] = useState({});
 
-  const [users, setUsers] = useState([
+  const users = [
     {
+         id: 1,
          name: 'Saul',
          surname: 'Gallegos',
          email: 'saul@solgeek.com',
-         status: 'activo',
+         status: 'active',
          obs: ''
     },
     {
+         id: 2,
          name: 'Albert',
          surname: 'Einstein',
          email: 'Alb@gmail.com',
-         status: 'activo',
+         status: 'active',
          obs: ''
     },
     {
+         id: 3,
          name: 'Juan',
          surname: 'Carrera',
          email: 'carr33@gmail.com',
-         status: 'inactivo',
+         status: 'inactive',
          obs: ''
     },
     {
+         id: 4,
          name: 'Pablo',
          surname: 'Gomez',
          email: 'gomp@hotmail.com',
-         status: 'activo',
+         status: 'active',
          obs: ''
     },
     {
+         id: 5,
          name: 'Pau',
          surname: 'Terraza',
          email: 'terraPau@mail.com.mx',
-         status: 'inactivo',
+         status: 'inactive',
          obs: ''
     }
-]);
+  ];
 
   return (
     <div className="App">
       <FormAdd
         edit={edit}
         setEdit={setEdit}
+        editUser={editUser}
       />
       <List
         users={users}
         setEdit={setEdit}
+        setEditUser={setEditUser}
       />
     </div>
   );

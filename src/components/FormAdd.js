@@ -2,7 +2,7 @@ import '../App.css';
 import useForm from '../useForm';
 import validate from '../Validator';
 
-const FormAdd = ({edit, setEdit}) => {
+const FormAdd = ({edit, setEdit, editUser}) => {
 
      const {handleChange, values, handleSubmit, errors} = useForm(validate);
 
@@ -29,7 +29,7 @@ const FormAdd = ({edit, setEdit}) => {
                               name="name"
                               className="form-input"
                               placeholder="Nombre"
-                              value={values.name}
+                              value={editUser.name}
                               onChange={handleChange}
                          />
                          {errors.name ? <p>{errors.name}</p> : null}
@@ -46,7 +46,7 @@ const FormAdd = ({edit, setEdit}) => {
                               name="surname"
                               className="form-input"
                               placeholder="Apellido"
-                              value={values.surname}
+                              value={editUser.surname}
                               onChange={handleChange}
                          />
                          {errors.surname ? <p>{errors.surname}</p> : null}
@@ -63,7 +63,7 @@ const FormAdd = ({edit, setEdit}) => {
                               name="email"
                               className="form-input"
                               placeholder="saulgallegos@solgeek.com"
-                              value={values.email}
+                              value={editUser.email}
                               onChange={handleChange}
                          />
                          {errors.email ? <p>{errors.email}</p> : null}
@@ -77,7 +77,7 @@ const FormAdd = ({edit, setEdit}) => {
                               id="status"
                               className="form-input"
                               name="status"
-                              value={values.status}
+                              value={editUser.status}
                               onChange={handleChange}
                          >
                               <option value="active">Activo</option>

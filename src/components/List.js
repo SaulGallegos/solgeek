@@ -1,6 +1,6 @@
 import '../App.css';
 
-const List = ({users, setEdit}) => {
+const List = ({users, setEdit, setEditUser}) => {
 
      return (
           <div className="list">
@@ -23,7 +23,7 @@ const List = ({users, setEdit}) => {
                          <li>{user.email}</li>
                          <li>
                               {
-                                   user.status === 'activo'
+                                   user.status === 'active'
                               ? 
                                    <i class='bx bx-check-circle'></i>
                               :
@@ -33,7 +33,7 @@ const List = ({users, setEdit}) => {
                          <li>
                               <a href="#">
                                    <i class='bx bxs-trash'></i>
-                              </a>   <a href="#" onClick={()=>setEdit(true)}>
+                              </a>   <a href="#" onClick={()=>{setEdit(true); setEditUser(user);}}>
                                    <i class='bx bxs-edit'></i>
                               </a>
                          </li>
