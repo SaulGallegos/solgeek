@@ -2,7 +2,7 @@ import '../App.css';
 import useForm from '../useForm';
 import validate from '../Validator';
 
-const FormAdd = () => {
+const FormAdd = ({edit}) => {
 
      const {handleChange, values, handleSubmit, errors} = useForm(validate);
 
@@ -12,7 +12,11 @@ const FormAdd = () => {
                     className="form"
                     onSubmit={handleSubmit}
                >
-                    <h1>Crear nuevo usuario</h1>
+                    {edit ? 
+                         <h1>Editar usuario</h1>
+                         :
+                         <h1>Crear nuevo usuario</h1>               
+                    }
 
                     <div className="form-inputs">
                          <label 
@@ -99,7 +103,7 @@ const FormAdd = () => {
                          className="form-input-btn"
                          type="submit"
                     >
-                         Crear usuario
+                         Guardar usuario
                     </button>
 
                </form>

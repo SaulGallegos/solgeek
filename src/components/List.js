@@ -1,17 +1,6 @@
 import '../App.css';
-import {useState} from 'react';
-// import 'boxicons';
 
-const List = () => {
-
-     const [user, setUser] = useState({
-          name: '',
-          surname: '',
-          email: '',
-          status: '',
-          obs: ''
-     });
-     const [users, setUsers] = useState([]);
+const List = ({users, setEdit}) => {
 
      return (
           <div className="list">
@@ -21,15 +10,55 @@ const List = () => {
                          <li>Apellido</li>
                          <li>Email</li>
                          <li>Status</li>
-                         <li></li>
-                         {/*  <li><a href="#"><i class='bx bxs-trash'></i></a></li>
-                         <li><a href="#"><i class='bx bxs-edit'></i></a></li> */ }
+                         <li><i class='bx bxs-trash'></i>   <i class='bx bxs-edit'></i></li>
                     </ul>
                </div>
 
+               {users.map(user => (
+
+                    <div className="items">
+                    <ul>
+                         <li>{user.name}</li>
+                         <li>{user.surname}</li>
+                         <li>{user.email}</li>
+                         <li>
+                              {
+                                   user.status === 'activo'
+                              ? 
+                                   <i class='bx bx-check-circle'></i>
+                              :
+                                   <i class='bx bx-x'></i>
+                              }
+                         </li>
+                         <li>
+                              <a href="#">
+                                   <i class='bx bxs-trash'></i>
+                              </a>   <a href="#" onClick={()=>setEdit(true)}>
+                                   <i class='bx bxs-edit'></i>
+                              </a>
+                         </li>
+                    </ul>
+                    </div>
+
+               ))}
+
+
                <div className="items">
-                    <h1>Items</h1>
+                    <ul>
+                         <li>Saul</li>
+                         <li>Gallegos</li>
+                         <li>Email@gmail.com</li>
+                         <li><i class='bx bx-check-circle'></i></li>
+                         <li>
+                              <a href="#">
+                                   <i class='bx bxs-trash'></i>
+                              </a>   <a href="#">
+                                   <i class='bx bxs-edit'></i>
+                              </a>
+                         </li>
+                    </ul>
                </div>
+               
           </div>
      );
 }
